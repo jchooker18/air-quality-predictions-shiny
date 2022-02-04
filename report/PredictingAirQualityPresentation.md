@@ -21,7 +21,7 @@ https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/airqualit
 User Input
 ========================================================
 
-![alt text](Sidebar.png)
+![Alt text](Sidebar.png)
 
 ***
 
@@ -36,15 +36,10 @@ Modeling Code
 
 The code shown below contains the linear modeling functions used, assuming that the user chose solar radiation, as well as the reactive functions that predict ozone based on solar radiation alone and on all three variables together.
 
-```{r, echo=FALSE}
-solarModel <- lm(Ozone ~ Solar.R, data = airquality)
-totalModel <- lm(Ozone ~ Solar.R + Wind + Temp, data = airquality)
 
-solarPred <- predict(solarModel, newdata = data.frame(Solar.R = 150))
-totalPred <- predict(totalModel, newdata = data.frame(Solar.R = 150, Wind = 10,Temp = 75))
-```
 
-```{r, eval=FALSE, tidy=TRUE}
+
+```r
 solarModel <- lm(Ozone ~ Solar.R, data = airquality)
 totalModel <- lm(Ozone ~ Solar.R + Wind + Temp, data = airquality)
 
@@ -65,18 +60,10 @@ Results Plot
 ========================================================
 left: 40%
 
-```{r, echo=FALSE}
-plot(airquality$Solar.R, airquality$Ozone, 
-     main = "Effect of Solar Radiation on Air Quality", 
-     xlab = "Solar Radiation", 
-     ylab = "Ozone", bty = "n", pch = 16,
-     xlim = c(0, 340), ylim = c(0, 170))
-abline(solarModel, col = "red", lwd = 2)
-points(150, solarPred, col = "red", pch = 16, cex = 2)
-```
+![plot of chunk unnamed-chunk-3](PredictingAirQualityPresentation-figure/unnamed-chunk-3-1.png)
 
 ***
 
-The plot at right is displayed to the user after hitting submit, assuming they entered a value of 150 for solar radiation. Notice the point on the graph, which corresponds to the predicted ozone level of 37.7 from the solar radiation model.
+The plot at left is displayed to the user after hitting submit, assuming they entered a value of 150 for solar radiation. Notice the point on the graph, which corresponds to the predicted ozone level of 37.7 from the solar radiation model.
 
 The application also tells the user that using the all-inclusive model, the predicted ozone level is 35.2 (assuming set wind speed value of 10 and temperature value of 75). This value can change drastically when variables are altered. Users see here exactly how much predictions can be affected by including or excluding variables in a model.

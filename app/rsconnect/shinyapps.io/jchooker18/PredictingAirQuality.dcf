@@ -1,0 +1,12 @@
+name: PredictingAirQuality
+title: PredictingAirQuality
+username:
+account: jchooker18
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2099611
+bundleId: 2999970
+url: https://jchooker18.shinyapps.io/PredictingAirQuality/
+when: 1586612488.35807
+asMultiple: FALSE
+asStatic: FALSE
