@@ -1,9 +1,6 @@
 Predicting Air Quality Shiny App
 ========================================================
-author: Jason Hooker
-date: 4/11/2020
-width: 1440
-height: 900
+
 
 Overview
 ========================================================
@@ -21,11 +18,11 @@ https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/airqualit
 User Input
 ========================================================
 
-![Alt text](Sidebar.png)
+<img src="report/Sidebar.png" width="500" height="500" />
 
 ***
 
-Users input values via the sliders and dropdown menu shown at left. They are able to set values for 
+Users input values via the sliders and dropdown menu shown above. They are able to set values for 
 solar radiation, wind speed, and temperature, then must choose which variable they'd like to see
 used in a linear model to predict ozone.
 
@@ -58,12 +55,11 @@ totalPred <- reactive({
 
 Results Plot
 ========================================================
-left: 40%
 
-![plot of chunk unnamed-chunk-3](PredictingAirQualityPresentation-figure/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-3](report/PredictingAirQualityPresentation-figure/unnamed-chunk-3-1.png)
 
 ***
 
-The plot at left is displayed to the user after hitting submit, assuming they entered a value of 150 for solar radiation. Notice the point on the graph, which corresponds to the predicted ozone level of 37.7 from the solar radiation model.
+The plot above is displayed to the user after hitting submit, assuming they entered a value of 150 for solar radiation. Notice the point on the graph, which corresponds to the predicted ozone level of 37.7 from the solar radiation model.
 
 The application also tells the user that using the all-inclusive model, the predicted ozone level is 35.2 (assuming set wind speed value of 10 and temperature value of 75). This value can change drastically when variables are altered. Users see here exactly how much predictions can be affected by including or excluding variables in a model.
